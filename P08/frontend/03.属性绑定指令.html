@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a :href="link">百度</a>
+<!-- 冒号就是进行渲染，这里把link放在这，vue就会把值渲染到超链接上 -->
+        <input type="text" :placeholder="inputValue">
+        <img :src="imgSrc" :style="{width:w}" alt="">
+    </div>
+
+    <script>
+        const vm = {
+            data: function(){
+            return{
+                    link:"http://www.baidu.com",
+                    //文本框的占位符内容
+                    inputValue:'请输入内容',
+                    //图片的src地址
+                    imgSrc:'./images/demo.png',
+                    w:'500px'
+                }
+            }
+        }
+        const app = Vue.createApp(vm)
+        app.mount('#app')
+    </script>
+</body>
+</html>

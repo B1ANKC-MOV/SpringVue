@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click ="flag=!flag">Toggle Flag</button>
+
+        <p v-if="flag">请求成功 --- 被 v-if 控制</p>
+        <p v-show="flag">请求成功 --- 被 v-show控制</p>
+    </div>
+
+    <script>
+        const vm ={
+            data:function(){
+                return{
+                    flag:false,
+                }
+            }
+        }
+        const app = Vue.createApp(vm)
+        app.mount('#app')
+    </script>
+</body>
+</html>

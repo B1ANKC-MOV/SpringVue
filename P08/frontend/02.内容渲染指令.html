@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>姓名:{{username}}</p>
+        <p>性别：{{gender}}</p>
+<!-- 花括号是vue里面的data模板，会做一些渲染。
+对http不会进行渲染，但是使用v-html可以进行渲染 -->
+        <p>{{desc}}</p>
+        <p v-html="desc"></p>
+    </div>
+
+    <script>
+    const vm = {
+    data:function(){
+        return{
+                username:'zhangsan',
+                gender:'男',
+                desc:'<a href="http://www.baidu.com">百度</a>'
+            }
+        }
+    }
+    const app = Vue.createApp(vm)
+    app.mount('#app')
+    </script>
+</body>
+</html>
